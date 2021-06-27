@@ -10,7 +10,7 @@
         <h1 class="log">Sign-in.</h1>
         <p>Use your Access Account</p>
         </div>
-        <form action="">
+        <form action="include/login.inc.php">
             <p>Username</p>
             <input type="text" name="" placeholder="Enter Username">
             <p>Password</p>
