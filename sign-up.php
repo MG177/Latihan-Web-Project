@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Sign-up.</title>
-        <link rel="stylesheet" href="style/sign-up.css">
+        <link rel="stylesheet" href="style/style.css">
     </head>
     <body>
         <div class="login_box">
@@ -10,7 +10,7 @@
         <h1 class="log">Sign-up.</h1>
         <p>Use your Access Account</p>
         </div>
-        <form action="include/signup.inc.php">
+        <form action="include/signup.inc.php" method="post">
         <table>
             <tr>
                 <td><p>Nama Depan</p></td>

@@ -1,10 +1,10 @@
 <html>
     <head>
         <title>Login.</title>
-        <link rel="stylesheet" href="style/Login.css">
+        <link rel="stylesheet" href="style/style.css">
     </head>
     <body>
-        <div class="login_box">
+        <div class="login_box" style="height:auto; padding-bottom: 30px;">
         <img src="img/user.svg" class="avatar">
         <div class="title">
         <h1 class="log">Sign-in.</h1>
