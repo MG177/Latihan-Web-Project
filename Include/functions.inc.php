@@ -69,3 +69,18 @@ function createUser($conn, $fname, $lname, $email, $pwd, $repwd){
     header("location: ../sign-up.php?error=none");
         exit();
 }
+function emptyInputLogin($email,$pwd){
+    if (empty($email) || empty($pwd)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    
+
+    return $result;
+}
+function loginUser($conn, $email, $pwd){
+    $emailExists = emailExist($conn, $email);
+
+}
