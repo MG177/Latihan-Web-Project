@@ -33,15 +33,15 @@ function pwdMatch($pwd,$repwd){
     }
     return $result;
 }
-function emailExist($conn,$email){
-    $sql = "SELECT * FROM users Where userEmail = ?;";
+function emailExist($conn, $email){
+    $sql = "SELECT * FROM users WHERE userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
-    if (mysqli_stmt_prepere($stmt, $sql)) {
-        header("location: ../signup.php?error=stmtfailed");
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../sign-up.php?error=stmtfailed1");
         exit();
     }
 
-    mysqli_stmt_init($stmt, "s", $email);
+    mysqli_stmt_bind_param($stmt, "s", $email);
     mysqli_stmt_execute($stmt);
 
     $resultData = mysqli_stmt_get_result($stmt);
@@ -60,8 +60,8 @@ function emailExist($conn,$email){
 function createUser($conn, $fname, $lname, $email, $pwd, $repwd){
     $sql = "INSERT INTO users (firstName,lastName,userEmail,userPwd) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
-    if (mysqli_stmt_prepere($stmt, $sql)) {
-        header("location: ../signup.php?error=stmtfailed");
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../sign-up.php?error=stmtfailed2");
         exit();
     }
 
@@ -69,6 +69,6 @@ function createUser($conn, $fname, $lname, $email, $pwd, $repwd){
     mysqli_stmt_bind_param($stmt, "ssss", $fname, $lname, $email, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../signup.php?error=none");
+    header("location: ../sign-up.php?error=none");
         exit();
 }

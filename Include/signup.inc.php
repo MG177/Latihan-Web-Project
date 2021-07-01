@@ -34,3 +34,4 @@ else{
     header("location: ../sign-up.php?error=else");
     exit();
 }
+?>
