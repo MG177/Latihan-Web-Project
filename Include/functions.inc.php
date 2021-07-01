@@ -1,7 +1,6 @@
 <?php
 
 function emptyInputSignup($fname,$lname,$email,$pwd,$repwd){
-    $result;
     if (empty($fname) || empty($lname) || empty($email) || empty($pwd)|| empty($repwd)){
         $result = true;
     }
@@ -14,7 +13,6 @@ function emptyInputSignup($fname,$lname,$email,$pwd,$repwd){
 }
 
 function invalidEmail($email){
-    $result;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
     }
@@ -24,7 +22,6 @@ function invalidEmail($email){
     return $result;
 }
 function pwdMatch($pwd,$repwd){
-    $result;
     if ($pwd !== $repwd) {
         $result = true;
     }
@@ -37,7 +34,7 @@ function emailExist($conn, $email){
     $sql = "SELECT * FROM users WHERE userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../sign-up.php?error=stmtfailed1");
+        header("location: ../sign-up.php?error=stmtfailed");
         exit();
     }
 
@@ -61,7 +58,7 @@ function createUser($conn, $fname, $lname, $email, $pwd, $repwd){
     $sql = "INSERT INTO users (firstName,lastName,userEmail,userPwd) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../sign-up.php?error=stmtfailed2");
+        header("location: ../sign-up.php?error=stmtfailed");
         exit();
     }
 

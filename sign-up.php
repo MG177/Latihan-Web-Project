@@ -27,9 +27,38 @@
             <p>Confirm Password</p>
             <input type="password" name="repwd" placeholder="Confirm Password">
             <input type="submit" name="submit" value="Login">
+            <div class="error">
+            <?php
+                if(isset($_GET["error"])){
+                    if ($_GET["error"] == "emptyinput") {
+                        echo "<p>Fill in all fields!</p>";
+                    }
+                    if ($_GET["error"] == "invalidemail") {
+                        echo "<p>Invalid Email!</p>";
+                    }
+                    if ($_GET["error"] == "pwdnotmatch") {
+                        echo "<p>Password doesn't match!</p>";
+                    }
+                    if ($_GET["error"] == "emailtaken") {
+                        echo "<p>This email is already registered!</p>";
+                    }
+                    if ($_GET["error"] == "stmtfailed") {
+                        echo "<p>Something went wrong, try agaian!</p>";
+                    }
+                    if ($_GET["error"] == "none") {
+                        echo "<p>You have signed up!</p>";
+                    }
+                }
+            ?>
+            </div>
             <a href="#">Forget Password?</a><br>
             <a href="#">Don't have an account?</a>
         </form>
         </div>
+
+
+
+
     </body>
 </html>
+

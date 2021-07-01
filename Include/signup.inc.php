@@ -31,7 +31,7 @@
     createUser($conn, $fname, $lname, $email, $pwd, $repwd);
 }
 else{
-    header("location: ../sign-up.php?error=else");
+    header("location: ../sign-up.php");
     exit();
 }
 ?>
