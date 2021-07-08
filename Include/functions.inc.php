@@ -54,7 +54,7 @@ function emailExist($conn, $email){
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $fname, $lname, $email, $pwd, $repwd){
+function createUser($conn, $fname, $lname, $email, $pwd){
     $sql = "INSERT INTO users (firstName,lastName,userEmail,userPwd) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -83,4 +83,24 @@ function emptyInputLogin($email,$pwd){
 function loginUser($conn, $email, $pwd){
     $emailExists = emailExist($conn, $email);
 
+    if($emailExists === false){
+        header("location: ../log-in.php?error=wronglogin");
+        exit();
+    }
+
+    $pwdHashed = $emailExists["userPwd"];
+    $checkPwd = password_verify($pwd, $pwdHashed);
+
+    if ($checkPwd === false) {
+        header("location: ../log-in.php?error=wronglogin");
+        exit();
+    }
+    else if($checkPwd === true){
+        session_start();
+        $_SESSION["userid"] = $emailExists["userId"];
+        $_SESSION["fname"] = $emailExists["firstName"];
+        $_SESSION["useremail"] = $emailExists["userEmail"];
+        header("location: ../index.php");
+        exit();
+    }
 }

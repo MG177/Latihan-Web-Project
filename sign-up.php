@@ -1,25 +1,29 @@
+<?php include_once 'sidebar.php'?>
 <html>
     <head>
         <title>Sign-up.</title>
         <link rel="stylesheet" href="style/style.css">
     </head>
     <body>
+    <section>
+    <div class="box" style="height:auto; padding-bottom: 30px;">
         <div class="login_box">
-        <img src="img/user.svg" class="avatar">
         <div class="title">
         <h1 class="log">Sign-up.</h1>
         <p>Use your Access Account</p>
         </div>
         <form action="include/signup.inc.php" method="post">
         <table>
-            <tr>
-                <td><p>Nama Depan</p></td>
-                <td><p>Nama Belakang</p></td>
-            </tr><tr class="namu">
-                <td><input type="text" name="fname" placeholder="Enter First Name"></td>
-                <td><input type="text" name="lname" placeholder="Enter Last Name"></td>
-            </tr>
-        </table>
+            <div class="sidetext">
+                <div class="left">
+                <p>Nama Depan</p>
+                <input type="text" name="fname" placeholder="Enter First Name">
+                </div>
+                <div class="right">
+                <p>Nama Belakang</p>
+                <input type="text" name="lname" placeholder="Enter Last Name">
+                </div>
+            </div>
             <p>E-mail</p>
             <input type="text" name="email" placeholder="Enter E-mail">
             <p>Password</p>
@@ -51,14 +55,11 @@
                 }
             ?>
             </div>
-            <a href="#">Forget Password?</a><br>
-            <a href="#">Don't have an account?</a>
+            <a href="log-in.php">I have an account</a>
         </form>
         </div>
-
-
-
-
+        </div>
+        </section>
     </body>
 </html>
 

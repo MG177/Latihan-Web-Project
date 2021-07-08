@@ -1,5 +1,5 @@
 <?php 
-
+header("location: ../log-in.php?error=emptyinput");
  if (isset($_POST["submit"])) {
 
     $email = $_POST["email"];
