@@ -99,8 +99,11 @@ function loginUser($conn, $email, $pwd){
         session_start();
         $_SESSION["userid"] = $emailExists["userId"];
         $_SESSION["fname"] = $emailExists["firstName"];
-        $_SESSION["useremail"] = $emailExists["userEmail"];
+        $_SESSION["lname"] = $emailExists["lastName"];
+        $_SESSION["email"] = $emailExists["userEmail"];
+        echo $_SESSION["akhir"];
         header("location: ../index.php");
+        echo $_SESSION["akhir"];
         exit();
     }
 }

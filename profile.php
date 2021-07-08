@@ -18,22 +18,24 @@
       <div class="box">
       <hr/>
       <table id="content" >
+<?php echo "
         <tr>
-          <td class="center">
-            <img src="img/Ganteng.jpg" alt="profile-picture" width="200" id="pp"/>
+          <td class=\"center\">
+            <img src=\"img/Ganteng.jpg\" alt=\"profile-picture\" width=\"200\" id=\"pp\"/>
           </td>
           <td>
-            <h1>Prayer MG Terok</h1>
+            <h1>".$_SESSION["fname"]." ".$_SESSION["lname"]."</h1>
             <h2>Collage Student</h2>
             <p>
               Watutumou, Kalawat, North Minahasa Regency, North Sulawesi, Indonesia, 95378
               <br />
-              <strong>Email:</strong> <em>s2200521@student.unklab.ac.id</em>
+              <strong>Email:</strong> <em>".$_SESSION["email"]."</em>
               <br />
               <strong>Phone:</strong> +62 856 9676 9836
             </p>
           </td>
         </tr>
+        ";?>
       </table>
       </div>
       </section>

@@ -30,8 +30,8 @@ height:100%;
 left:0;
 width:60px;
 overflow:hidden;
--webkit-transition:width .05s linear;
-transition:width .05s linear;
+-webkit-transition:width .1s ease-out;
+transition:width .1s ease-out;
 z-index:1000;
 
 }
@@ -55,8 +55,8 @@ color:#759493;
  font-family: arial;
 font-size: 22px;
 text-decoration:none;
--webkit-transition:all .1s linear;
-transition:all .1s linear;
+-webkit-transition:all .2s ease-out;
+transition:all .2s ease-out;
 margin-bottom: 5px;
 }
 

@@ -15,14 +15,13 @@
                     <a href=\"profile.php\">
                         <i class=\"fa home fa-2x\"><img src=\"img/Ganteng.jpg\" alt=\"profile-picture\" id=\"pp-mini\"></i>
                         <span class=\"nav-text\">".
-                        $_SESSION["fname"]
+                        $_SESSION["fname"]." ".$_SESSION["lname"]
                         ."</span>
                     </a>
-                <li>
+                </li>
                     ";
                 }
                 ?>
-                
                 <li>
                     <a href="index.php">
                         <i class="fa home fa-2x"><img src="icon/home.png"></i>
